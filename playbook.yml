@@ -37,7 +37,7 @@
         block: |
           client {
             enabled = true
-            servers = ["nomad-server-1:4647", "nomad-server-2:4647"]
+            servers = ["34.31.88.86:4647"]
             options {
               "driver.docker.enabled" = "true"
               "plugin.docker.config.image" = "docker:19.03.12"
