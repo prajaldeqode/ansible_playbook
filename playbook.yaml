@@ -1,8 +1,0 @@
-- name: getting started
-  hosts: prometheus
-  roles:
-    - role: test
-      become: true
-    # - role: setup_docker_compose
-    #   vars:
-    #     service_name: prometheus
