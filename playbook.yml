@@ -17,6 +17,3 @@
         path: "/var/lib/nomad"
         state: directory
         mode: "0777"
-    - name: Start Nomad client service
-      shell:
-        cmd: nomad agent -config /home/prapatidar/playbook/client.hcl
