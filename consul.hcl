@@ -19,3 +19,11 @@ service {
   }
 }
 
+bind_addr = "10.0.1.17"
+ports {
+    grpc= 8502,
+    http= 8500,
+    https= 8501
+  }
+
+
