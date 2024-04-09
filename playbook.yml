@@ -27,7 +27,7 @@
         state: latest
     - name: Install consul
       unarchive:
-        src: https://releases.hashicorp.com/consul/1.1.0/consul_1.1.0_linux_amd64.zip
+        src: https://releases.hashicorp.com/consul/1.18.1/consul_1.18.1_linux_amd64.zip
         dest: /usr/local/bin
         remote_src: yes
     - name: Verify consul installation
