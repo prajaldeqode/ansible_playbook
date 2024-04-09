@@ -2,7 +2,7 @@ data_dir = "/var/lib/nomad"
 log_level = "DEBUG"
 client {
   enabled = true
-  servers = ["34.30.37.198:4646"]  # IP address and port of the Nomad server
+  servers = ["10.0.1.4"]  # IP address and port of the Nomad server
   options {
     "driver.docker.enabled" = "true"
     "plugin.docker.config.image" = "docker:19.03.12"
