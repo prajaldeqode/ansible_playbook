@@ -2,6 +2,7 @@
 - name: Install Nomad and configure client
   hosts: localhost
   become: yes
+  gather_facts: yes
   tasks:
     - name: update apt-cache
       apt:
@@ -17,3 +18,29 @@
         path: "/var/lib/nomad"
         state: directory
         mode: "0777"
+  tasks:
+    - name: Update the software package repository
+      apt:
+        update_cache: yes
+    - name: Install dependencies
+      package:
+        name: ["curl", "net-tools", "unzip"]
+        state: latest
+    - name: Install consul
+      unarchive:
+        src: https://releases.hashicorp.com/consul/1.1.0/consul_1.1.0_linux_amd64.zip
+        dest: /usr/local/bin
+        remote_src: yes
+    - name: Verify consul installation
+      shell: "consul --version"
+      register: consul_version
+    - name: Create consul user
+      user:
+        name: consul
+    - name: Create Consul /var directory
+      file:
+          path: /var/consul
+          state: directory
+          owner: consul
+          group: consul
+          mode: 0755
