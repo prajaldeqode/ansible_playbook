@@ -18,7 +18,6 @@
         path: "/var/lib/nomad"
         state: directory
         mode: "0777"
-  tasks:
     - name: Update the software package repository
       apt:
         update_cache: yes
